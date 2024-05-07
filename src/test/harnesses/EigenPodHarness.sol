@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity =0.8.12;
+pragma solidity ^0.8.12;
 
 import "../../contracts/pods/EigenPod.sol";
 import "forge-std/Test.sol";
@@ -119,5 +119,9 @@ contract EPInternalFunctions is EigenPod, Test {
 
     function setValidatorRestakedBalance(bytes32 pkhash, uint64 restakedBalanceGwei) public {
         _validatorPubkeyHashToInfo[pkhash].restakedBalanceGwei = restakedBalanceGwei;
+    }
+
+    function setMostRecentWithdrawalTimestamp(uint64 _mostRecentWithdrawalTimestamp) public {
+        mostRecentWithdrawalTimestamp = _mostRecentWithdrawalTimestamp;
     }
  }
